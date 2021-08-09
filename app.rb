@@ -13,7 +13,14 @@ get '/secret/truth' do
   'Marmite is an abomination'
 end
 
-get '/cat' do
+get '/random-cat' do
   @name = ["Nicola", "Corinne"].sample
+  erb(:index)
+end
+
+get '/name-cat' do
+  # p params
+  @name = params[:name]
+  puts params
   erb(:index)
 end
